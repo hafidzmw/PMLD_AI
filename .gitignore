@@ -1,0 +1,13 @@
+# Mengabaikan semua file gambar dengan berbagai ekstensi
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.ico
+
+# Mengabaikan folder khusus gambar (jika ada)
+images/
+assets/images/
