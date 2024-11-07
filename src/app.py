@@ -33,7 +33,7 @@ def handle_image_upload():
         return jsonify({"error": "Invalid image format"}), 400
     
     # Process the image to detect rocks
-    processed_image, rock_count, rock_area_percentage = detect_rocks_in_image(image)
+    rock_count, rock_area_percentage, processed_image = detect_rocks_in_image(image)
     
     # Encode the processed image as JPEG
     _, image_buffer = cv2.imencode('.jpg', processed_image)
