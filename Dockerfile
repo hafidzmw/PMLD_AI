@@ -5,7 +5,7 @@ WORKDIR /app
 COPY ./src /app/src
 
 COPY ./requirements.txt /app
-COPY ./gunicorn_config.py /app
+COPY ./gunicorn.conf.py /app
 
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
@@ -14,4 +14,4 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir -p /app/logs
 
-CMD ["gunicorn", "-c", "/app/gunicorn_config.py", "src.app:app"]
+CMD ["gunicorn", "-c", "/app/gunicorn.conf.py", "src.app:app"]
